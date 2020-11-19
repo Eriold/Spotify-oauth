@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from '../Button';
 
 export const Search = () => {
   const handleSearch = (e) => {
@@ -17,9 +18,7 @@ export const Search = () => {
           autoComplete="off"
         />
         <div className="d-flex justify-content-center">
-          <button className="btn m-1 btn-block btn-primary col-6 mt-4 mb-2">
-            Search
-          </button>
+          <Button width={25}>Search</Button>
         </div>
       </form>
     </div>
