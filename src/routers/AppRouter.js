@@ -23,17 +23,19 @@ export const AppRouter = () => {
 
   return (
     <Router>
-      <div>
+      <div className="vh-100 vw-100">
         <Switch>
-          <Route
-            exact
-            path="/"
-            render={(props) => (
-              <Login isSessionValid={inValidateSession} {...props} />
-            )}
-          />
+          <div className="container h-100">
+            <Route
+              exact
+              path="/"
+              render={(props) => (
+                <Login isSessionValid={inValidateSession} {...props} />
+              )}
+            />
+          </div>
           <Route path="/redirect" component={Home} />
-          <Route path="/DashboardRoutes" component={DashboardRoutes} />
+          <Route path="/dashboard" component={DashboardRoutes} />
         </Switch>
       </div>
     </Router>
