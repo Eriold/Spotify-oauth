@@ -52,10 +52,12 @@ const Search = (props) => {
           </p>
         </div>
       )}
-      <ListTrack albums={albums} />
-      <div className="d-flex justify-content-center">
-        <Button onClick={() => loadAlbums()}>Load more</Button>
-      </div>
+      {total > 0 && <ListTrack albums={albums} />}
+      {total > 0 && (
+        <div className="d-flex justify-content-center">
+          <Button onClick={() => loadAlbums()}>Load more</Button>
+        </div>
+      )}
     </>
   );
 };
