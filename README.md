@@ -25,7 +25,7 @@ Copy the :lock: `Client ID` and past in the file `.env` and replaces `YOUR_CLIEN
 
 ## :arrow_forward: Step 4
 
-Copy [*http://localhost:3000/redirect*] 
+Copy [ *http://localhost:3000/redirect* ] 
 
 Click in `EDIT SETTINGS` and pase in `Redirect URIs`
 
@@ -50,6 +50,7 @@ Down and click in `SAVE`
 
 In the project directory, you can run:
 
+### `npm install`
 ### `npm start`
 
 Runs the app in the development mode.\
