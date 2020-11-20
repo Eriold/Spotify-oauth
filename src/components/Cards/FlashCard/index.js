@@ -17,7 +17,9 @@ const FlashCard = ({ id, title, image, artists }) => {
             </div>
             <div className="col-md-4">
               <Link to={`/detail/${id}`}>
-                <Button active>detail...</Button>
+                <Button active className="animate__animated animate__fadeIn">
+                  detail...
+                </Button>
               </Link>
             </div>
           </div>

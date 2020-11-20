@@ -6,7 +6,7 @@ export const ListTrack = ({ albums }) => {
   const { width } = useResize();
 
   return (
-    <div className="card-columns justify-content-center">
+    <div className="card-columns justify-content-center animate__animated animate__fadeInUp animate__delay-0.5s">
       {Object.keys(albums).length > 0 &&
         albums.items.map((item) => (
           <FlashCard

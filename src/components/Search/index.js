@@ -18,7 +18,7 @@ export const Search = (props) => {
     }
   };
   return (
-    <div className="text-uppercase text-center mt-4 mb-4 col-8">
+    <div className="text-uppercase text-center mt-4 mb-4 col-8 animate__animated animate__fadeIn">
       <h2>Search your album prefer</h2>
       <p className="text-left">
         Total results: {props.total ? props.total : 0}
