@@ -25,7 +25,7 @@ const DetailCard = (props) => {
           </li>
         </ul>
 
-        <h5>Listeng: {}</h5>
+        <h5>Listeng</h5>
         <p>{}</p>
       </div>
     </div>
