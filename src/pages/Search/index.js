@@ -3,9 +3,9 @@ import { Search as SearchCom } from '../../components/Search';
 import { initiateGetResult, initiateLoadMoreAlbums } from '../../state/actions';
 import { connect } from 'react-redux';
 import { ListTrack } from '../../components/ListTrack';
+import { Button } from '../../components/Button';
 
 const Search = (props) => {
-  // const [isLoading, setIsLoading] = useState(false);
   const [textSearch, setTextSearch] = useState('');
   const [errorSearch, setErrorSearch] = useState(false);
   const { inValidateSession, albums } = props;
@@ -15,6 +15,8 @@ const Search = (props) => {
   const handleSearch = (searchTerm) => {
     if (inValidateSession) {
       props.dispatch(initiateGetResult(searchTerm)).then();
+    } else {
+      props.history.push('/');
     }
     setTextSearch(searchTerm);
   };
@@ -27,7 +29,15 @@ const Search = (props) => {
         setErrorSearch(false);
       }
     }
-  }, [albums, total]);
+  }, [albums, items]);
+
+  const loadAlbums = async () => {
+    if (inValidateSession) {
+      await props.dispatch(initiateLoadMoreAlbums(albums.next));
+    } else {
+      props.history.push('/');
+    }
+  };
 
   return (
     <>
@@ -43,6 +53,9 @@ const Search = (props) => {
         </div>
       )}
       <ListTrack albums={albums} />
+      <div className="d-flex justify-content-center">
+        <Button onClick={() => loadAlbums()}>Load more</Button>
+      </div>
     </>
   );
 };

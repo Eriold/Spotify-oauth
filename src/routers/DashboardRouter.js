@@ -16,9 +16,7 @@ export const DashboardRoutes = ({ inValidateSession, ...props }) => {
           <Route
             exact
             path="/search"
-            render={(p) => (
-              <Search inValidateSession={inValidateSession} {...props} />
-            )}
+            render={(props) => <Search inValidateSession={inValidateSession} />}
           />
         </Switch>
       </Content>

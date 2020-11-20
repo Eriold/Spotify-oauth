@@ -1,11 +1,9 @@
 import React from 'react';
-import { FlashCard } from '../FlashCard';
+import { FlashCard } from '../Cards';
 import { useResize } from '../../hooks/useResize';
 
 export const ListTrack = ({ albums }) => {
   const { width } = useResize();
-
-  console.log(albums.items);
 
   return (
     <div className="card-columns justify-content-center">

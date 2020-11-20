@@ -1,8 +1,8 @@
 import React from 'react';
-import { Button } from '../Button';
+import { Button } from '../../Button';
 import { Link } from 'react-router-dom';
 
-export const FlashCard = ({ id, title, image, artists }) => {
+const FlashCard = ({ id, title, image, artists }) => {
   return (
     <div className="card ms-3">
       <div className="row no-gutters">
@@ -16,7 +16,7 @@ export const FlashCard = ({ id, title, image, artists }) => {
               <p>{artists}</p>
             </div>
             <div className="col-md-4">
-              <Link to={`./detail/${id}`}>
+              <Link to={`/detail/${id}`}>
                 <Button active>detail...</Button>
               </Link>
             </div>
@@ -26,3 +26,5 @@ export const FlashCard = ({ id, title, image, artists }) => {
     </div>
   );
 };
+
+export default FlashCard;
