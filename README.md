@@ -25,11 +25,25 @@ Copy the :lock: `Client ID` and past in the file `.env` and replaces `YOUR_CLIEN
 
 ## :arrow_forward: Step 4
 
-Click in `EDIT SETTINGS`
+Copy *http://localhost:3000/redirect* 
+
+Click in `EDIT SETTINGS` and pase in `Redirect URIs`
+
+![Settings App form](https://github.com/Eriold/images/blob/master/spotify/Dashboard-app-settings.png)
 
 
+## :arrow_forward: Step 5
+
+Confirm if  `Redirect URIs` is corretly create
+
+![Settings App added](https://github.com/Eriold/images/blob/master/spotify/Dashboard-app-settings-add-ok.png)
 
 
+### :arrow_forward: Step 6
+
+Down and click in `SAVE`
+
+![Settings App added](https://github.com/Eriold/images/blob/master/spotify/Dashboard-app-settings-save.png)
 
 
 ## Available Scripts :rocket:
