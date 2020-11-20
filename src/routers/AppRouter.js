@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { Home } from '../pages/Home';
+import { Redirect } from '../pages/Redirect';
 import Login from '../pages/Login';
-import { DashboardRoutes } from './DashboardRoutes';
+import { NotFound } from '../pages/NotFound';
+import { DashboardRoutes } from './DashboardRouter';
 
 export const AppRouter = () => {
   const [expireTime, setExpireTime] = useState('0');
@@ -25,17 +26,27 @@ export const AppRouter = () => {
     <Router>
       <div className="vh-100 vw-100">
         <Switch>
-          <div className="container h-100">
-            <Route
-              exact
-              path="/"
-              render={(props) => (
-                <Login isSessionValid={inValidateSession} {...props} />
-              )}
-            />
-          </div>
-          <Route path="/redirect" component={Home} />
-          <Route path="/dashboard" component={DashboardRoutes} />
+          <Route
+            exact
+            path="/"
+            render={(props) => (
+              <Login isSessionValid={inValidateSession} {...props} />
+            )}
+          />
+          <Route
+            path="/redirect"
+            render={(props) => (
+              <Redirect
+                isValidSession={inValidateSession}
+                setExpiryTime={setExpireTime}
+                {...props}
+              />
+            )}
+          />
+          {inValidateSession() && (
+            <Route exact path="/search" component={DashboardRoutes} />
+          )}
+          <Route component={NotFound} />
         </Switch>
       </div>
     </Router>

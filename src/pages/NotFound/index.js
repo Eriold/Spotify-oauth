@@ -5,7 +5,7 @@ const Container = styled.div`
   padding: 50px;
 `;
 
-export const Error = () => {
+export const NotFound = () => {
   return (
     <Container>
       <h1>Error site no found</h1>

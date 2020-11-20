@@ -1,7 +1,9 @@
 import React from 'react';
 import { Button } from '../Button';
+import { useResize } from '../../hooks/useResize';
 
 export const Search = () => {
+  const { width } = useResize();
   const handleSearch = (e) => {
     e.preventDefault();
     console.log('Show me form');
@@ -18,7 +20,7 @@ export const Search = () => {
           autoComplete="off"
         />
         <div className="d-flex justify-content-center">
-          <Button width={25}>Search</Button>
+          <Button width={width < 760 ? 100 : 40}>Search</Button>
         </div>
       </form>
     </div>
