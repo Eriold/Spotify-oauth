@@ -8,9 +8,12 @@ const Container = styled.div`
 export const NotFound = () => {
   return (
     <Container>
-      <h1>Error site no found</h1>
-      <hr />
-      <p>Please try later or going to back </p>
+      <div className="justify-content-center text-center text-danger">
+        <h1>Error site no found</h1>
+        <hr className="col-4" />
+        <img src="https://http.cat/404" alt="" width="450" />
+        <p className="mt-4">Please try later or going to back </p>
+      </div>
     </Container>
   );
 };
