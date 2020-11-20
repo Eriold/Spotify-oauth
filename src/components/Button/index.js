@@ -13,8 +13,8 @@ export const Button = styled.button`
   font-size: 1rem;
   line-height: 1.5;
   border-radius: 0.25rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: ${(props) => (props.active ? '0' : '1rem')};
+  margin-bottom: ${(props) => (props.active ? '0' : '1rem')};
 
   &:hover {
     background-color: #ff347b;

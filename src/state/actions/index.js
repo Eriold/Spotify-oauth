@@ -1,5 +1,5 @@
-import { SET_ALBUMS, ADD_ALBUMS } from '../utils/constants';
-import { get } from '../utils/api';
+import { SET_ALBUMS, ADD_ALBUMS } from '../../state/constants';
+import { get } from '../../utils/api';
 
 export const setAlbums = (albums) => ({
   type: SET_ALBUMS,

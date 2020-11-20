@@ -44,7 +44,16 @@ export const AppRouter = () => {
             )}
           />
           {inValidateSession() && (
-            <Route exact path="/search" component={DashboardRoutes} />
+            <Route
+              exact
+              path="/search"
+              render={(props) => (
+                <DashboardRoutes
+                  inValidateSession={inValidateSession()}
+                  {...props}
+                />
+              )}
+            />
           )}
           <Route component={NotFound} />
         </Switch>

@@ -1,20 +1,25 @@
 import React from 'react';
+import { Button } from '../Button';
+import { Link } from 'react-router-dom';
 
-// Waiting estructure data API.
-export const FlashCard = ({ id, title, image, describe, album }) => {
+export const FlashCard = ({ id, title, image, artists }) => {
   return (
-    <div className="card ms-3" style={{ maxWidth: 540 }}>
+    <div className="card ms-3">
       <div className="row no-gutters">
-        <div className="col-md-4">
-          <img src={image} alt={title} className="card-img" />
-        </div>
-        <div className="col-md-8">
-          <div className="card-body">
-            <h5 className="card-title">{title}</h5>
-            <p className="card-text">{describe}</p>
-            <p className="card-text">
-              Album: <small className="text-muted"> {album}</small>
-            </p>
+        <img src={image} alt={title} className="card-img" />
+        <div className="card-body">
+          <h5 className="card-title">
+            {title.length > 20 ? `${title.substring(0, 15)}...` : title}
+          </h5>
+          <div className="row no-gutters">
+            <div className="col-md-7">
+              <p>{artists}</p>
+            </div>
+            <div className="col-md-4">
+              <Link to={`./detail/${id}`}>
+                <Button active>detail...</Button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
