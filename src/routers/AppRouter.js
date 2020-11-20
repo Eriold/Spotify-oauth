@@ -4,7 +4,6 @@ import { Redirect } from '../pages/Redirect';
 import Login from '../pages/Login';
 import { NotFound } from '../pages/NotFound';
 import { DashboardRoutes } from './DashboardRouter';
-import { Detail } from '../pages/Detail';
 
 export const AppRouter = () => {
   const [expireTime, setExpireTime] = useState('0');
